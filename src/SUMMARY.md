@@ -9,24 +9,24 @@
 ## Hardware
 
 * [Components](hardware/components.md)
-    * [Topside](hardware/components.md#topside-components)
-    * [ROV](hardware/components.md#rov-components)
+    * [Topside](hardware/components.md)
+    * [ROV](hardware/components.md)
 
 ## Software
 
 * [Components](software/components.md)
 * [ArduSub Firmware](software/ardusub-firmware.md)
-    * [Versioning](software/ardusub-firmware.md#versioning)
-    * [Release History](software/ardusub-firmware.md#release-history)
-    * [What Version is Installed?](software/ardusub-firmware.md#what-version-is-installed)
-    * [Updating](software/ardusub-firmware.md#updating)
+    * [Versioning](software/ardusub-firmware.md)
+    * [Release History](software/ardusub-firmware.md)
+    * [What Version is Installed?](software/ardusub-firmware.md)
+    * [Updating](software/ardusub-firmware.md)
 
 ## Getting Started
 
 * [Installation](getting-started/installation.md)
-    * [QGroundControl](getting-started/installation.md#qgroundcontrol)
-    * [ArduSub](getting-started/installation.md#ardusub)
-    * [Raspberry Pi](getting-started/installation.md#raspberry-pi)
+    * [QGroundControl](getting-started/installation.md)
+    * [ArduSub](getting-started/installation.md)
+    * [Raspberry Pi](getting-started/installation.md)
 * [Initial Setup](getting-started/initial-setup.md)
 
 ## Operator's Manual
@@ -63,7 +63,7 @@
     * [ArduSub Firmware](resources/downloads.md#ardusub-firmware-files)
     * [Raspberry Pi Image](resources/downloads.md#raspberry-pi-images)
 * [Further Reading](resources/further-reading.md)
-    
+
 ## Miscellaneous
 
 * [Wireless Topside](miscellaneous/wireless-topside.md)
