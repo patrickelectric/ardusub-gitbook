@@ -20,6 +20,6 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   local-dir: book
-  fqdn: http://patrickelectric.work/ardusub-gitbook/
+  fqdn: patrickelectric.work/ardusub-gitbook/
   on:
       branch: test
