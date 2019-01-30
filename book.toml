@@ -1,0 +1,10 @@
+[book]
+title = "ArduSub documentation"
+author = "This is an Author"
+description = "This is a description"
+multilingual = false
+src = "src"
+
+[build]
+build-dir = "book"
+create-missing = false
