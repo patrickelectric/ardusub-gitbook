@@ -22,4 +22,4 @@ deploy:
   local-dir: book
   fqdn: http://patrickelectric.work/ardusub-gitbook/
   on:
-      branch: master
+      branch: test
