@@ -59,9 +59,9 @@
 
 * [Community](resources/community.md)
 * [Downloads](resources/downloads.md)
-    * [QGroundControl](resources/downloads.md#qgroundcontrol)
-    * [ArduSub Firmware](resources/downloads.md#ardusub-firmware-files)
-    * [Raspberry Pi Image](resources/downloads.md#raspberry-pi-images)
+    * [QGroundControl](resources/downloads.md)
+    * [ArduSub Firmware](resources/downloads.md)
+    * [Raspberry Pi Image](resources/downloads.md)
 * [Further Reading](resources/further-reading.md)
 
 ## Miscellaneous
