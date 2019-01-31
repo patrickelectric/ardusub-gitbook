@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Initial Setup - ArduSub documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is a description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="../introduction/features.html"><strong aria-hidden="true">2.</strong> Features</a></li><li><a href="../introduction/applications.html"><strong aria-hidden="true">3.</strong> Applications</a></li><li><a href="../hardware/components.html"><strong aria-hidden="true">4.</strong> Components</a></li><li><ol class="section"><li><a href="../hardware/components.html"><strong aria-hidden="true">4.1.</strong> Topside</a></li><li><a href="../hardware/components.html"><strong aria-hidden="true">4.2.</strong> ROV</a></li></ol></li><li><a href="../software/components.html"><strong aria-hidden="true">5.</strong> Components</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.</strong> ArduSub Firmware</a></li><li><ol class="section"><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.1.</strong> Versioning</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.2.</strong> Release History</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.3.</strong> What Version is Installed?</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.4.</strong> Updating</a></li></ol></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li><ol class="section"><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.1.</strong> QGroundControl</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.2.</strong> ArduSub</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.3.</strong> Raspberry Pi</a></li></ol></li><li><a href="../getting-started/initial-setup.html" class="active"><strong aria-hidden="true">8.</strong> Initial Setup</a></li><li><a href="../operators-manual/button-functions.html"><strong aria-hidden="true">9.</strong> Joystick Button Functions</a></li><li><a href="../operators-manual/arming-checks.html"><strong aria-hidden="true">10.</strong> Arming Checks</a></li><li><a href="../operators-manual/flight-modes.html"><strong aria-hidden="true">11.</strong> Flight Modes</a></li><li><a href="../operators-manual/failsafes.html"><strong aria-hidden="true">12.</strong> Failsafes</a></li><li><a href="../operators-manual/logging.html"><strong aria-hidden="true">13.</strong> Logging</a></li><li><a href="../operators-manual/parameters.html"><strong aria-hidden="true">14.</strong> Parameters</a></li><li><a href="../operators-manual/full-parameter-list.html"><strong aria-hidden="true">15.</strong> Full Parameter List</a></li><li><a href="../troubleshooting/troubleshooting.html"><strong aria-hidden="true">16.</strong> Troubleshooting</a></li><li><a href="../operators-manual/rc-input-and-output.html"><strong aria-hidden="true">17.</strong> RC Input and Output</a></li><li><a href="../operators-manual/outputs.html"><strong aria-hidden="true">18.</strong> Controlling Outputs</a></li><li><a href="../operators-manual/recording-video.html"><strong aria-hidden="true">19.</strong> Recording Video</a></li><li><a href="../operators-manual/altimeters.html"><strong aria-hidden="true">20.</strong> Altimeters</a></li><li><a href="../operators-manual/companion-web.html"><strong aria-hidden="true">21.</strong> Companion Web Interface</a></li><li><a href="../operators-manual/software-update.html"><strong aria-hidden="true">22.</strong> Updating Software</a></li><li><a href="../developers/opencv.html"><strong aria-hidden="true">23.</strong> OpenCV</a></li><li><a href="../developers/pymavlink.html"><strong aria-hidden="true">24.</strong> Pymavlink</a></li><li><a href="../developers/sitl.html"><strong aria-hidden="true">25.</strong> SITL</a></li><li><a href="../developers/developers.html"><strong aria-hidden="true">26.</strong> Build ArduSub</a></li><li><a href="../developers/building-docs.html"><strong aria-hidden="true">27.</strong> Build this Documentation</a></li><li><a href="../developers/gps-positioning.html"><strong aria-hidden="true">28.</strong> GPS Positioning</a></li><li><a href="../resources/community.html"><strong aria-hidden="true">29.</strong> Community</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.</strong> Downloads</a></li><li><ol class="section"><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.1.</strong> QGroundControl</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.2.</strong> ArduSub Firmware</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.3.</strong> Raspberry Pi Image</a></li></ol></li><li><a href="../resources/further-reading.html"><strong aria-hidden="true">31.</strong> Further Reading</a></li><li><a href="../miscellaneous/wireless-topside.html"><strong aria-hidden="true">32.</strong> Wireless Topside</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">ArduSub documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#initial-setup" id="initial-setup"><h1>Initial Setup</h1></a>
+<p>After the software is installed on the electronics, the electronics need to be wired and the software needs to be configured. mounting the controller to the vehicle, connecting it to the tether, power, and motors, and then performing initial configuration and calibration.</p>
+<a class="header" href="#wiring-and-connections" id="wiring-and-connections"><h2>Wiring and Connections</h2></a>
+<p>The exact wiring configuration depends on the vehicle configuration and the hardware used. The following are the standard channel assignments. Please see the <a href="/introduction/features.html#supported-frames">frame configurations</a> for standard thruster numbering.</p>
+<table><thead><tr><th align="right"> PWM Channel </th><th align="left"> Connection  </th></tr></thead><tbody>
+<tr><td align="right"> Channel 1   </td><td align="left"> Thruster #1 </td></tr>
+<tr><td align="right"> Channel 2   </td><td align="left"> Thruster #2 </td></tr>
+<tr><td align="right"> Channel 3   </td><td align="left"> Thruster #3 </td></tr>
+<tr><td align="right"> Channel 4   </td><td align="left"> Thruster #4 (if used) </td></tr>
+<tr><td align="right"> Channel 5   </td><td align="left"> Thruster #5 (if used) </td></tr>
+<tr><td align="right"> Channel 6   </td><td align="left"> Thruster #6 (if used) </td></tr>
+<tr><td align="right"> Channel 7   </td><td align="left"> Thruster #7 (if used) </td></tr>
+<tr><td align="right"> Channel 8   </td><td align="left"> Thruster #8 (if used) </td></tr>
+<tr><td align="right"> User Configurable </td><td align="left"> LED Lights  </td></tr>
+<tr><td align="right"> User Configurable </td><td align="left"> Camera Tilt Servo </td></tr>
+</tbody></table>
+<p>The hardware also has other input/output ports including I<sup>2</sup>C and serial ports. These are the recommended connections for those ports.</p>
+<table><thead><tr><th> Port                    </th><th> Connection                             </th></tr></thead><tbody>
+<tr><td align="right"> I<sup>2</sup>C          </td><td align="left"> Pressure sensor (MS58XX)               </td></tr>
+<tr><td align="right"> USB Serial Port         </td><td align="left"> Companion computer (if used)           </td></tr>
+<tr><td align="right"> Power Port              </td><td align="left"> Power Module                           </td></tr>
+</tbody></table>
+<a class="header" href="#host-computer-setup" id="host-computer-setup"><h2>Host Computer Setup</h2></a>
+<p>Just a few small setup items are required on the host computer. Please see the details here depending on which tether interface is being used.</p>
+<a class="header" href="#set-up-static-ip" id="set-up-static-ip"><h3>Set Up Static IP</h3></a>
+<p>In an Ethernet-based setup, the Raspberry Pi defaults to the IP address of 192.168.2.2. The <strong>host computer must be set up with an IP address of 192.168.2.1</strong> in order to receive communications and video. See instructions below:</p>
+<a class="header" href="#windows" id="windows"><h4>Windows</h4></a>
+<ol>
+<li>Go to <em>Control Panel &gt; Network and Internet &gt; Network Connections</em> and right click on the Ethernet adapter, then choose <em>Properties</em>.</li>
+<li>In the properties dialog, choose <em>Internet Protocol Version 4 (TCP/IPv4)</em>, then click <em>Properties</em>.
+<img src="/images/qgc/win/windows-properties-window.png" class="img-responsive img-center" style="max-width:600px" /></li>
+<li>In the next dialog, enter <em>192.168.2.1</em> as the computer's IP address. Enter <em>255.255.255.0</em> for the subnet mask.
+<img src="/images/qgc/win/windows-ipv4-settings.png" class="img-responsive img-center" style="max-width:500px" /></li>
+</ol>
+<a class="header" href="#linux" id="linux"><h4>Linux</h4></a>
+<p>To be completed</p>
+<a class="header" href="#mac" id="mac"><h4>Mac</h4></a>
+<ol>
+<li>From System Prefrences, go to Network Settings and set IP for Ethernet to Manual, the address to 192.168.2.1, and the subnet mask to 255.255.255.0.</li>
+<li>From System Prefrences, go to Sharing and click &quot;Internet Sharing&quot;. Choose &quot;Wi-Fi&quot; for the source and your Ethernet port or adapter for the destination.</li>
+</ol>
+<a class="header" href="#connect-qgc-to-autopilot" id="connect-qgc-to-autopilot"><h2>Connect QGC to Autopilot</h2></a>
+<p>The autopilot can be connected to QGC through several different methods depending on the hardware used.</p>
+<a class="header" href="#serial-port-connection" id="serial-port-connection"><h3>Serial Port Connection</h3></a>
+<p>If using a serial port, simply connect the port to the computer and open QGC. The controller should automatically connect to QGC and onboard data will be downloaded.</p>
+<a class="header" href="#ethernet-connection-with-companion-computer" id="ethernet-connection-with-companion-computer"><h3>Ethernet Connection with Companion Computer</h3></a>
+<p>If an Ethernet connection is used, then a <em>companion computer</em> must be used to relay communications between the Pixhawk autopilot and the surface computer. The Pixhawk is connected to the <em>companion computer</em> via USB.</p>
+<a class="header" href="#ethernet-connection-with-linux-autopilot-navio-bbbmini-etc" id="ethernet-connection-with-linux-autopilot-navio-bbbmini-etc"><h3>Ethernet Connection with Linux Autopilot (Navio, BBBmini, etc.)</h3></a>
+<p>For Linux based autopilots, the network connection is launched when the ArduSub code is started. For examples, please see the documentation for your respective autopilot.</p>
+<a class="header" href="#frame-configuration" id="frame-configuration"><h2>Frame Configuration</h2></a>
+<p>The vehicle frame is selected in the <em>Frame</em> tab of the <em>Vehicle Setup</em> page. Choose your desired frame, then reboot the autopilot.</p>
+<p>If you have compiled ArduSub with a custom frame configuration, you may select your custom frame by setting the <em>FRAME_CONFIG</em> parameter to <em>Custom</em>.</p>
+<a class="header" href="#sensor-calibration" id="sensor-calibration"><h2>Sensor Calibration</h2></a>
+<p>Once the autopilot is connected to QGC for the first time, we must calibrate the accelerometers, compass, and joystick.</p>
+<ol>
+<li>Go to the settings tab in QGC and select the red <em>Sensors</em> tab on the left sidebar.</li>
+<li>Choose your autopilot orientation:
+<ul>
+<li><code>None</code> for level orientation (such as the BlueROV1)</li>
+<li><code>Roll90</code> for the BlueROV2</li>
+</ul>
+</li>
+<li>Click on <em>Accelerometers</em> and follow the instructions.</li>
+<li>Click on <em>Compass</em> and follow the instructions.</li>
+<li>When completed, the <em>Sensors</em> tab will no longer be red.</li>
+</ol>
+<a class="header" href="#joystickgamepad-calibration" id="joystickgamepad-calibration"><h2>Joystick/Gamepad Calibration</h2></a>
+<p>Some joysticks require calibration before they can be used with QGroundControl. This allows QGC to detect which axis is which and what the range of each axis is.</p>
+<ol>
+<li>Click &quot;Calibrate&quot; on the joystick page, then click &quot;Next&quot;.</li>
+<li>Follow the instructions printed on the screen, and the diagram showing how to move the sticks for each step of the calibration.</li>
+</ol>
+<a class="header" href="#button-setup" id="button-setup"><h2>Button Setup</h2></a>
+<p><em>ArduSub</em> provides the capability to map different joystick buttons to different functions. The default button configuration is shown in the image below:</p>
+<p><img src="/images/controller.png" class="img-responsive img-center" /></p>
+<p>Each button can be assigned to one primary function and one alternate &quot;shift&quot; function. If the &quot;shift&quot; functions are used, then a &quot;shift&quot; button must be assigned. This works like the shift key on your keyboard, altering the functionality of other buttons while pressed.</p>
+<p>You can customize the button functions in the <em>Joystick</em> tab of the <em>Vehicle Setup</em> page. Pressing each button will light up the button number and then the desired function can be chosen. See the image below for an example setup:</p>
+<p><img src="/images/qgc/button-setup-1.png" class="img-responsive img-center" /></p>
+<p>Note, if using a Logitech gamepad, pressing the &quot;mode&quot; button causes the left joystick and the button pad to switch places. Make sure the light next to &quot;mode&quot; is <em>not</em> illuminated. Also note that to use an Xbox controller or Logitech gamepad in &quot;X-input&quot; mode, you must install an X-input driver. We recommend <a href="https://github.com/360Controller/360Controller/releases">360Controller</a>.</p>
+<a class="header" href="#setup-voltage-and-current-measurement" id="setup-voltage-and-current-measurement"><h2>Setup Voltage and Current Measurement</h2></a>
+<p>On the <em>Power</em> tab choose the appropriate setup. If using the standard 3DR Power Module, choose <em>Analog Voltage and Current</em>, the appropriate battery capacity, and the <em>Power Module 90A</em>. The battery capacity depends on the battery that you are using on your ROV and should be entered in <em>mAh</em>.</p>
+<p><img src="/images/qgc/power-setup-1.png" class="img-responsive img-center" /></p>
+<a class="header" href="#camera-tilt-setup-if-used" id="camera-tilt-setup-if-used"><h2>Camera Tilt Setup (if used)</h2></a>
+<p>Select the <em>Camera</em> tab. The &quot;Gimbal Tilt&quot; settings are used for the camera tilt. Choose whichever channel the servo is plugged into for &quot;Output channel&quot; and <em>RC8</em> for &quot;Input channel&quot;. Valid output channels are any of the unused motor outputs (RC1-RC8), and Aux outputs 1-4 (RC9-RC12). Select <em>Servo</em> for the &quot;Type&quot; under &quot;Gimbal Settings&quot; on the right.</p>
+<p><img src="/images/qgc/camera-tilt-setup-1.png" class="img-responsive img-center" /></p>
+<p>Is desired, you can check the <em>Stabilize</em> box, which will enable auto-stabilization of the camera based on the vehicle pitch angle. We generally leave this unchecked.</p>
+<a class="header" href="#lights-setup" id="lights-setup"><h2>Lights Setup</h2></a>
+<p>The output channel for the lights is configured in the <em>Lights</em> tab of the <em>Vehicle Setup</em> page. Select the output channel that you have plugged your lights into, as shown below.</p>
+<blockquote>
+<p><strong>Info</strong> This setup only works with lights that are controllable with a servo PWM pulse, such as the Blue Robotics <a href="http://www.bluerobotics.com/store/electronics/lumen-light-r1/"><em>Lumen</em> Lights</a>.</p>
+</blockquote>
+<p><img src="/images/qgc/lights-setup.png" class="img-responsive img-center" /></p>
+<a class="header" href="#configuring-motor-directions" id="configuring-motor-directions"><h2>Configuring Motor Directions</h2></a>
+<p>Due to clockwise and counterclockwise propellers, as well as wiring, the motor directions will have to be tested and corrected during initial setup. <em>ArduSub</em> includes a set of parameters for this purpose. The parameters are called <em>MOT_n_DIRECTION</em> where <em>n</em> is the output number, and valid values are <em>normal</em> or <em>reverse</em>.</p>
+<p>We generally follow this process to check motor rotation directions:</p>
+<ol>
+<li>Set the flight mode to &quot;Manual&quot;</li>
+<li>Arm vehicle</li>
+<li>Move the &quot;forward&quot; joystick forward and verify that the thrusters that produce some forward thrust are operating in the correct direction and blowing out the back of the vehicle</li>
+<li>Move the &quot;vertical&quot; joystick upwards and verify that the thrusters that produce some vertical thrust are operating in the correct direction and blowing air downwards</li>
+</ol>
+<p style="font-size:10px; text-align:center">
+Sponsored by <a href="http://www.bluerobotics.com/">Blue Robotics</a>. Code released under the <a href="https://github.com/bluerobotics/ardusub/blob/master/COPYING.txt">GPLv3 License</a>. Documentation released under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-NC-SA 4.0</a>.<br />
+<a href="https://github.com/bluerobotics/ardusub-gitbook/issues/">Submit a Documentation GitHub Issue here</a> to report any errors, suggestions, or missing information in this documentation.<br />
+<a href="https://github.com/bluerobotics/ardusub/issues/">Submit an ArduSub GitHub Issue here</a> to report issues with the ArduSub software.
+</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../getting-started/installation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../operators-manual/button-functions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../getting-started/installation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../operators-manual/button-functions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

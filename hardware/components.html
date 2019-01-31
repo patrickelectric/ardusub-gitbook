@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ROV - ArduSub documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is a description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="../introduction/features.html"><strong aria-hidden="true">2.</strong> Features</a></li><li><a href="../introduction/applications.html"><strong aria-hidden="true">3.</strong> Applications</a></li><li><a href="../hardware/components.html" class="active"><strong aria-hidden="true">4.</strong> Components</a></li><li><ol class="section"><li><a href="../hardware/components.html" class="active"><strong aria-hidden="true">4.1.</strong> Topside</a></li><li><a href="../hardware/components.html" class="active"><strong aria-hidden="true">4.2.</strong> ROV</a></li></ol></li><li><a href="../software/components.html"><strong aria-hidden="true">5.</strong> Components</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.</strong> ArduSub Firmware</a></li><li><ol class="section"><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.1.</strong> Versioning</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.2.</strong> Release History</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.3.</strong> What Version is Installed?</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.4.</strong> Updating</a></li></ol></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li><ol class="section"><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.1.</strong> QGroundControl</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.2.</strong> ArduSub</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.3.</strong> Raspberry Pi</a></li></ol></li><li><a href="../getting-started/initial-setup.html"><strong aria-hidden="true">8.</strong> Initial Setup</a></li><li><a href="../operators-manual/button-functions.html"><strong aria-hidden="true">9.</strong> Joystick Button Functions</a></li><li><a href="../operators-manual/arming-checks.html"><strong aria-hidden="true">10.</strong> Arming Checks</a></li><li><a href="../operators-manual/flight-modes.html"><strong aria-hidden="true">11.</strong> Flight Modes</a></li><li><a href="../operators-manual/failsafes.html"><strong aria-hidden="true">12.</strong> Failsafes</a></li><li><a href="../operators-manual/logging.html"><strong aria-hidden="true">13.</strong> Logging</a></li><li><a href="../operators-manual/parameters.html"><strong aria-hidden="true">14.</strong> Parameters</a></li><li><a href="../operators-manual/full-parameter-list.html"><strong aria-hidden="true">15.</strong> Full Parameter List</a></li><li><a href="../troubleshooting/troubleshooting.html"><strong aria-hidden="true">16.</strong> Troubleshooting</a></li><li><a href="../operators-manual/rc-input-and-output.html"><strong aria-hidden="true">17.</strong> RC Input and Output</a></li><li><a href="../operators-manual/outputs.html"><strong aria-hidden="true">18.</strong> Controlling Outputs</a></li><li><a href="../operators-manual/recording-video.html"><strong aria-hidden="true">19.</strong> Recording Video</a></li><li><a href="../operators-manual/altimeters.html"><strong aria-hidden="true">20.</strong> Altimeters</a></li><li><a href="../operators-manual/companion-web.html"><strong aria-hidden="true">21.</strong> Companion Web Interface</a></li><li><a href="../operators-manual/software-update.html"><strong aria-hidden="true">22.</strong> Updating Software</a></li><li><a href="../developers/opencv.html"><strong aria-hidden="true">23.</strong> OpenCV</a></li><li><a href="../developers/pymavlink.html"><strong aria-hidden="true">24.</strong> Pymavlink</a></li><li><a href="../developers/sitl.html"><strong aria-hidden="true">25.</strong> SITL</a></li><li><a href="../developers/developers.html"><strong aria-hidden="true">26.</strong> Build ArduSub</a></li><li><a href="../developers/building-docs.html"><strong aria-hidden="true">27.</strong> Build this Documentation</a></li><li><a href="../developers/gps-positioning.html"><strong aria-hidden="true">28.</strong> GPS Positioning</a></li><li><a href="../resources/community.html"><strong aria-hidden="true">29.</strong> Community</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.</strong> Downloads</a></li><li><ol class="section"><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.1.</strong> QGroundControl</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.2.</strong> ArduSub Firmware</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.3.</strong> Raspberry Pi Image</a></li></ol></li><li><a href="../resources/further-reading.html"><strong aria-hidden="true">31.</strong> Further Reading</a></li><li><a href="../miscellaneous/wireless-topside.html"><strong aria-hidden="true">32.</strong> Wireless Topside</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">ArduSub documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#hardware-components" id="hardware-components"><h1>Hardware Components</h1></a>
+<p>We will divide the hardware required to run ArduSub into three categories:</p>
+<ul>
+<li>Topside components: A joystick and a computer are required</li>
+<li>ROV components: An autopilot and (typically) a companion computer are required, as well as various other bits and pieces.</li>
+<li>Tether components: A suitable tether is required for operation. Sorry, your RC radio and WiFi connection will not penetrate water. In some cases, additional electronics are required at the ends of the tether to achieve reliable communications.</li>
+</ul>
+<a class="header" href="#topside-components" id="topside-components"><h2>Topside Components</h2></a>
+<a class="header" href="#computer" id="computer"><h3>Computer</h3></a>
+<p>The following operating systems are supported use with the topside software (QGroundControl):</p>
+<ul>
+<li>Windows 10</li>
+<li>Mac OSX</li>
+<li>Ubuntu 14.04 and 16.04</li>
+</ul>
+<a class="header" href="#joystick" id="joystick"><h3>Joystick</h3></a>
+<p>The following joysticks are supported for use with the topside software (QGroundControl):</p>
+<ul>
+<li>Logitech F310</li>
+<li>Logitech F710</li>
+<li>Microsoft Xbox controllers</li>
+</ul>
+<a class="header" href="#rov-components" id="rov-components"><h2>ROV Components</h2></a>
+<p>Below is a typical diagram of hardware components on the ROV and their connections. Please note that many of the components on this diagram are optional, and this is not the only possible hardware configuration.</p>
+<p><img src="/images/hardware-diagram.png" class="img-responsive img-center" style="max-height:600px;"></p>
+<a class="header" href="#autopilot" id="autopilot"><h3>Autopilot</h3></a>
+<p>The autopilot is responsible for controlling the ROV. The autopilot will typically have multiple on-board sensors like gyroscopes, accelerometers, and a compass to determine the vehicle's attitude. The autopilot processes the pilot input and sensor data, and controls the motors, lights, servos, and relays on the vehicle.</p>
+<a class="header" href="#depth-sensor" id="depth-sensor"><h3>Depth Sensor</h3></a>
+<p>ArduSub supports the use of the MS5837 as an external water pressure and depth sensor. A depth sensor will need to be connected to the autopilot in order to use <em>Depth Hold</em> mode.</p>
+<a class="header" href="#leak-sensor" id="leak-sensor"><h3>Leak Sensor</h3></a>
+<p>ArduSub can be configured to read leak sensors, and perform a failsafe action when a leak is detected. The SOS leak sensor is an excellent option.</p>
+<a class="header" href="#battery" id="battery"><h3>Battery</h3></a>
+<p>It is recommended to design your vehicle to operate on battery power. Powering an ROV through the tether is not a trivial task, and is outside the scope of this documentation. Battery selection can be intimidating due to the overwhelming number of options, but there are only a few important considerations:</p>
+<ul>
+<li><strong>Voltage:</strong> Batteries often specify their voltage as well as a corresponding 'S' rating indicating the number of 3.7V cells in wired in <strong>S</strong>eries inside the battery. The voltage of your battery needs to be matched to the ratings of your ESCs. The Blue Robotics ESCs support 3S (11.1V) and 4S (14.8V) batteries.</li>
+<li><strong>Capacity</strong> Batteries usually specify their capacity in units of mAh, the larger this number, the more energy the battery will store, and the longer you can run your ROV.</li>
+<li><strong>Current Rating:</strong> Batteries usually specify a <strong>C</strong> rating for <strong>C</strong>urrent. In order to calculate the rated current in Amps, multiply the capacity of the battery in Ah (mAh/1000) times the <strong>C</strong> rating. For example, a 10000 mAh (10 Ah) battery with a 10C rating is rated for 100 Amps. As a general rule of thumb, your battery should be rated for a continuous current draw of 15 Amps times the number of thrusters.</li>
+</ul>
+<p><a href="https://hobbyking.com/en_us/multistar-high-capacity-4s-10000mah-multi-rotor-lipo-pack.html?___store=en_us">This battery</a> is a good bet for most cases, and it will fit inside a 3&quot; diameter enclosure.</p>
+<a class="header" href="#companion-computer" id="companion-computer"><h3>Companion Computer</h3></a>
+<p>The Companion Computer has two major functions on the ROV:</p>
+<ul>
+<li>Streaming HD video to the surface computer</li>
+<li>Relaying communications between the autopilot and the Surface Computer via Ethernet communications</li>
+</ul>
+<p>The companion computer must be running the <a href="/getting-started/installation.html">Companion Computer Software</a> to function correctly with ArduSub. Currently, only the Raspberry Pi 3 model B (not yet B+) is supported for use with the Companion Computer Software.</p>
+<a class="header" href="#camera" id="camera"><h3>Camera</h3></a>
+<p>The Companion Computer will stream HD video to the Ground Control Station at the surface. The Raspberry Pi camera and USB webcams with H.264 output are supported. The following USB webcams have been tested to work with the Companion Computer software:</p>
+<ul>
+<li><a href="https://www.bluerobotics.com/store/electronics/cam-usb-low-light-r1/">Blue Robotics H.264 USB Camera</a></li>
+</ul>
+<a class="header" href="#motors-and-escs" id="motors-and-escs"><h3>Motors and ESCs</h3></a>
+<p>ArduSub is designed to work with brushless motors. Brushless motors require Electronic Speed Controllers (ESCs) to operate. ArduSub requires all of the motors to operate in forward and reverse, so the ESC must support this functionality. Most ESCs for UAVs and Drones only operate in one direction! The following ESCs are supported for use with ArduSub:</p>
+<ul>
+<li>Blue Robotics <a href="http://www.bluerobotics.com/store/thrusters/besc30-r2/">Blue ESC</a></li>
+</ul>
+<p style="font-size:10px; text-align:center">
+Sponsored by <a href="http://www.bluerobotics.com/">Blue Robotics</a>. Code released under the <a href="https://github.com/bluerobotics/ardusub/blob/master/COPYING.txt">GPLv3 License</a>. Documentation released under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-NC-SA 4.0</a>.<br />
+<a href="https://github.com/bluerobotics/ardusub-gitbook/issues/">Submit a Documentation GitHub Issue here</a> to report any errors, suggestions, or missing information in this documentation.<br />
+<a href="https://github.com/bluerobotics/ardusub/issues/">Submit an ArduSub GitHub Issue here</a> to report issues with the ArduSub software.
+</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../introduction/applications.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../hardware/components.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../introduction/applications.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../hardware/components.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

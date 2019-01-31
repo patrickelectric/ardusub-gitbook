@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Logging - ArduSub documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is a description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="../introduction/features.html"><strong aria-hidden="true">2.</strong> Features</a></li><li><a href="../introduction/applications.html"><strong aria-hidden="true">3.</strong> Applications</a></li><li><a href="../hardware/components.html"><strong aria-hidden="true">4.</strong> Components</a></li><li><ol class="section"><li><a href="../hardware/components.html"><strong aria-hidden="true">4.1.</strong> Topside</a></li><li><a href="../hardware/components.html"><strong aria-hidden="true">4.2.</strong> ROV</a></li></ol></li><li><a href="../software/components.html"><strong aria-hidden="true">5.</strong> Components</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.</strong> ArduSub Firmware</a></li><li><ol class="section"><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.1.</strong> Versioning</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.2.</strong> Release History</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.3.</strong> What Version is Installed?</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.4.</strong> Updating</a></li></ol></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li><ol class="section"><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.1.</strong> QGroundControl</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.2.</strong> ArduSub</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.3.</strong> Raspberry Pi</a></li></ol></li><li><a href="../getting-started/initial-setup.html"><strong aria-hidden="true">8.</strong> Initial Setup</a></li><li><a href="../operators-manual/button-functions.html"><strong aria-hidden="true">9.</strong> Joystick Button Functions</a></li><li><a href="../operators-manual/arming-checks.html"><strong aria-hidden="true">10.</strong> Arming Checks</a></li><li><a href="../operators-manual/flight-modes.html"><strong aria-hidden="true">11.</strong> Flight Modes</a></li><li><a href="../operators-manual/failsafes.html"><strong aria-hidden="true">12.</strong> Failsafes</a></li><li><a href="../operators-manual/logging.html" class="active"><strong aria-hidden="true">13.</strong> Logging</a></li><li><a href="../operators-manual/parameters.html"><strong aria-hidden="true">14.</strong> Parameters</a></li><li><a href="../operators-manual/full-parameter-list.html"><strong aria-hidden="true">15.</strong> Full Parameter List</a></li><li><a href="../troubleshooting/troubleshooting.html"><strong aria-hidden="true">16.</strong> Troubleshooting</a></li><li><a href="../operators-manual/rc-input-and-output.html"><strong aria-hidden="true">17.</strong> RC Input and Output</a></li><li><a href="../operators-manual/outputs.html"><strong aria-hidden="true">18.</strong> Controlling Outputs</a></li><li><a href="../operators-manual/recording-video.html"><strong aria-hidden="true">19.</strong> Recording Video</a></li><li><a href="../operators-manual/altimeters.html"><strong aria-hidden="true">20.</strong> Altimeters</a></li><li><a href="../operators-manual/companion-web.html"><strong aria-hidden="true">21.</strong> Companion Web Interface</a></li><li><a href="../operators-manual/software-update.html"><strong aria-hidden="true">22.</strong> Updating Software</a></li><li><a href="../developers/opencv.html"><strong aria-hidden="true">23.</strong> OpenCV</a></li><li><a href="../developers/pymavlink.html"><strong aria-hidden="true">24.</strong> Pymavlink</a></li><li><a href="../developers/sitl.html"><strong aria-hidden="true">25.</strong> SITL</a></li><li><a href="../developers/developers.html"><strong aria-hidden="true">26.</strong> Build ArduSub</a></li><li><a href="../developers/building-docs.html"><strong aria-hidden="true">27.</strong> Build this Documentation</a></li><li><a href="../developers/gps-positioning.html"><strong aria-hidden="true">28.</strong> GPS Positioning</a></li><li><a href="../resources/community.html"><strong aria-hidden="true">29.</strong> Community</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.</strong> Downloads</a></li><li><ol class="section"><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.1.</strong> QGroundControl</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.2.</strong> ArduSub Firmware</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.3.</strong> Raspberry Pi Image</a></li></ol></li><li><a href="../resources/further-reading.html"><strong aria-hidden="true">31.</strong> Further Reading</a></li><li><a href="../miscellaneous/wireless-topside.html"><strong aria-hidden="true">32.</strong> Wireless Topside</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">ArduSub documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>layout: default
+title: &quot;Logging&quot;
+permalink: /logging/
+nav:</p>
+<ul>
+<li>Logging: logging</li>
+</ul>
+<hr />
+<a class="header" href="#logging" id="logging"><h1>Logging</h1></a>
+<p>There are two types of logs that can be used to diagnose problems while running ArduSub, or to retrieve data for post-processing.</p>
+<a class="header" href="#telemetry-logs" id="telemetry-logs"><h2>Telemetry logs</h2></a>
+<p>Ground Control Station (GCS) software will store all of the autopilot telemtry in a log. These telemetry logs contain all of the MAVLink messages received in their binary format. MAVProxy and QGroundControl save telemetry logs locally in a <strong>.tlog</strong> file. Telemetry logs are the preferred way of diagnosing most problems.</p>
+<p>Once connected to the autopilot, MAVProxy will save all telemetry to a file called 'mav.tlog'. The mav.tlog file is saved under the same path from which MAVProxy was run. By default, QGroundControl only begins logging telemetry after the vehicle has been armed. QGroundControl can be configured to log telemetry while the autopilot is disarmed in the <em>General</em> tab of the <em>Vehicle Seup</em> menu (click the purple 'Q' icon in the menu bar). Select the option to save logs 'even if vehicle was not armed' in order to log telemetry while disarmed. QGroundControl saves the telemetry logs in the 'Telemetry' directory under the 'Save Path' that is specified in the <em>General</em> tab of the <em>Vehicle Seup</em> menu.</p>
+<p><img src="/images/log-disarmed-qgc.png" class="img-responsive img-center" style="max-height:400px;"></p>
+<a class="header" href="#dataflash-logs" id="dataflash-logs"><h2>DataFlash logs</h2></a>
+<p>DataFlash logs are saved by the Autopilot directly to on-board memory (SD card in the case of the Pixhawk), regardless of a telemetry connection. These logs are saved in a <strong>.bin</strong> file. DataFlash logs are capable of logging data at a much faster rate than telemetry logs. The DataFlash logs are named and saved in ascending order. If GPS is available, the logs will be dated according to the GPS timestamp. DataFlash log files can be opened and inspected with MAVProxy, APM Planner 2 or Mission Planner.</p>
+<p>By default, a new dataflah log file is created when the vehicle is initially armed, and logging is performed only while the vehicle is armed. The <em>LOG_DISARMED</em> parameter can be set to 'Enabled' in order to begin a DataFlash log as soon as the autopilot is booted, even before arming. With <em>LOG_DISARMED</em> enabled, logging will be performed whether the vehicle is armed or disarmed, until the vehicle is powered down.</p>
+<p><img src="/images/log-disarmed.png" class="img-responsive img-center" style="max-height:400px;"></p>
+<a class="header" href="#downloading" id="downloading"><h2>Downloading</h2></a>
+<p>DataFlash logs can be retrieved in two ways:</p>
+<ol>
+<li>
+<p>Remove the Micro SD card from the Pixhawk and plug it into your computer to view and transfer the logs using a file explorer like a regular USB drive.</p>
+</li>
+<li>
+<p>Download the logs remotely via QGroundControl or MAVProxy.</p>
+<ul>
+<li>
+<p>Log downloading via QGroundControl</p>
+<p>Click the Analyze icon at the top of the window. The icon looks like a magnifying glass over a document.</p>
+<p>Click the 'Refresh' button to view available logs.</p>
+<p>Select the log you would like to download, and click 'Download'.</p>
+<p>Multiple logs can be downloaded by highlighting the desired logs before clicking 'Download'.</p>
+<p><img src="/images/log-download.png" class="img-responsive img-center" style="max-height:400px;"></p>
+</li>
+<li>
+<p>Log downloading via MAVProxy</p>
+<p>While connected to the autopilot via MAVProxy, type 'log list' in the MAVProxy console to list the available DataFlash logs onboard the autopilot.</p>
+<p>Type 'log download X' to download log number X</p>
+<p>While the log is downloading, you can type 'log status' to view the status of the download, or 'log cancel' to cancel the download.</p>
+</li>
+</ul>
+</li>
+</ol>
+<a class="header" href="#log-analysis" id="log-analysis"><h1>Log Analysis</h1></a>
+<p>Telemetry logs and dataflash logs are stored in different formats, and contain different (but in many cases overlapping) data. The log entries for telemetry logs are the MAVLink messages that are documented <a href="http://mavlink.org/messages/common">here</a> and <a href="http://mavlink.org/messages/ardupilotmega">here</a>. The log entries in dataflash logs are self-documented in their binary format, but the formats can also be determined by looking at the code <a href="https://github.com/ArduPilot/ardupilot/blob/master/ArduSub/Log.cpp">here</a>.</p>
+<p>Below is a brief description of some tools that are available for viewing and extracting data from logs.</p>
+<a class="header" href="#mavexplorerpy" id="mavexplorerpy"><h2>MAVExplorer.py</h2></a>
+<p>MAVExplorer is a command line/graphical tool used to plot log data. MAVExplorer supports both telemetry logs and dataflash logs, and is included as part of a MAVProxy installation. Please refer to the <a href="http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html">MAVExplorer documentation</a> for more information. <strong>Note, the log file name should not contain any spaces when using this tool</strong></p>
+<a class="header" href="#mavlogdumppy" id="mavlogdumppy"><h2>mavlogdump.py</h2></a>
+<p>mavlogdump.py is a command line tool used to filter and export log data to plain-text files like .csv or .json. mavlogdump.py supports both telemetry logs and dataflash logs, and it is just one of many such log analysis tools included as part of a pymavlink installation (also installed with MAVProxy). <strong>Note, the log file name should not contain any spaces when using this tool</strong></p>
+<p>To install mavlogdump.py, install pymavlink from pip:</p>
+<p><code>pip install pymavlink</code></p>
+<p>To use mavlogdump.py, refer to the output of <code>mavlogdump.py --help</code>:</p>
+<pre><code>usage: mavlogdump.py [-h] [--no-timestamps] [--planner] [--robust] [-f]
+                     [--condition CONDITION] [-q] [-o OUTPUT] [-p]
+                     [--format FORMAT] [--csv_sep CSV_SEP] [--types TYPES]
+                     [--nottypes NOTTYPES] [--dialect DIALECT]
+                     [--zero-time-base] [--no-bad-data] [--show-source]
+                     [--show-seq] [--source-system SOURCE_SYSTEM]
+                     [--source-component SOURCE_COMPONENT] [--link LINK]
+                     LOG
+
+example program that dumps a Mavlink log file. The log file is assumed to be
+in the format that qgroundcontrol uses, which consists of a series of MAVLink
+packets, each with a 64 bit timestamp header. The timestamp is in microseconds
+since 1970 (unix epoch)
+
+positional arguments:
+  LOG
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --no-timestamps       Log doesn't have timestamps
+  --planner             use planner file format
+  --robust              Enable robust parsing (skip over bad data)
+  -f, --follow          keep waiting for more data at end of file
+  --condition CONDITION
+                        select packets by condition
+  -q, --quiet           don't display packets
+  -o OUTPUT, --output OUTPUT
+                        output matching packets to give file
+  -p, --parms           preserve parameters in output with -o
+  --format FORMAT       Change the output format between 'standard', 'json',
+                        and 'csv'. For the CSV output, you must supply types
+                        that you want.
+  --csv_sep CSV_SEP     Select the delimiter between columns for the output
+                        CSV file. Use 'tab' to specify tabs. Only applies when
+                        --format=csv
+  --types TYPES         types of messages (comma separated with wildcard)
+  --nottypes NOTTYPES   types of messages not to include (comma separated with
+                        wildcard)
+  --dialect DIALECT     MAVLink dialect
+  --zero-time-base      use Z time base for DF logs
+  --no-bad-data         Don't output corrupted messages
+  --show-source         Show source system ID and component ID
+  --show-seq            Show sequence numbers
+  --source-system SOURCE_SYSTEM
+                        filter by source system ID
+  --source-component SOURCE_COMPONENT
+                        filter by source component ID
+  --link LINK           filter by comms link ID
+</code></pre>
+<a class="header" href="#mavlogdumppy-examples" id="mavlogdumppy-examples"><h4>mavlogdump.py Examples</h4></a>
+<p>Print out all STATUSTEXT messages in the log file:</p>
+<pre><code>mavlogdump.py --types=STATUSTEXT test.tlog 
+2018-05-15 12:59:42.57: STATUSTEXT {severity : 6, text : ArduSub V3.5.3 (ad81760b)}
+2018-05-15 12:59:42.57: STATUSTEXT {severity : 6, text : PX4: 8d505a02 NuttX: 1a99ba58}
+2018-05-15 12:59:42.57: STATUSTEXT {severity : 6, text : PX4v2 00400027 32365109 36363331}
+2018-05-15 13:00:46.97: STATUSTEXT {severity : 4, text : Motor test timed out!}
+2018-05-15 13:00:47.87: STATUSTEXT {severity : 6, text : ArduSub V3.5.3 (ad81760b)}
+2018-05-15 13:00:47.88: STATUSTEXT {severity : 6, text : PX4: 8d505a02 NuttX: 1a99ba58}
+2018-05-15 13:00:47.88: STATUSTEXT {severity : 6, text : PX4v2 00400027 32365109 36363331}
+2018-05-15 13:00:49.05: STATUSTEXT {severity : 2, text : 10 second cool down required}
+2018-05-15 13:00:49.05: STATUSTEXT {severity : 4, text : Arm motors before testing motors.}
+2018-05-15 13:00:49.06: STATUSTEXT {severity : 4, text : motor test initialization failed!}
+
+</code></pre>
+<p>The output can be filtered based on message type, and also based on conditions in the message fields.</p>
+<p>Export all ATTITUDE messages to a .csv file:</p>
+<pre><code>mavlogdump.py --types=ATTITUDE --format=csv test.tlog &gt; test.csv
+</code></pre>
+<p>Export all SCALED_PRESSURE2 messages to a .csv file, filter by showing only messages while vehicle was armed</p>
+<pre><code>mavlogdump.py --types=SCALED_PRESSURE2 --condition HEARTBEAT.system_status==4 --format=csv test.tlog &gt; test.csv
+</code></pre>
+<p>Export all messages to a human readable file, filter to discrete time span (only two seconds here)</p>
+<pre><code> mavlogdump.py --condition 'SYSTEM_TIME.time_unix_usec&gt;1526496245000000 and SYSTEM_TIME.time_unix_usec&lt;1526496247000000' test.tlog &gt; test.log
+</code></pre>
+<a class="header" href="#mission-planner" id="mission-planner"><h2>Mission Planner</h2></a>
+<p>Mission Planner is a ground control station software like QGroundControl. Mission Planner does not have support for operating ArduSub, but the log files produced by ArduSub are compatible with the graphical analysis tools in Mission Planner. See the <a href="http://ardupilot.org/copter/docs/common-downloading-and-analyzing-data-logs-in-mission-planner.html">Mission Planner log analysis documentation</a> for more details.</p>
+<p style="font-size:10px; text-align:center">
+Sponsored by <a href="http://www.bluerobotics.com/">Blue Robotics</a>. Code released under the <a href="https://github.com/bluerobotics/ardusub/blob/master/COPYING.txt">GPLv3 License</a>. Documentation released under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-NC-SA 4.0</a>.<br />
+<a href="https://github.com/bluerobotics/ardusub-gitbook/issues/">Submit a Documentation GitHub Issue here</a> to report any errors, suggestions, or missing information in this documentation.<br />
+<a href="https://github.com/bluerobotics/ardusub/issues/">Submit an ArduSub GitHub Issue here</a> to report issues with the ArduSub software.
+</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../operators-manual/failsafes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../operators-manual/parameters.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../operators-manual/failsafes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../operators-manual/parameters.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

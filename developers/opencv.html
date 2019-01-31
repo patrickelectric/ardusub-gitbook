@@ -1,0 +1,602 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>OpenCV - ArduSub documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is a description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="../introduction/features.html"><strong aria-hidden="true">2.</strong> Features</a></li><li><a href="../introduction/applications.html"><strong aria-hidden="true">3.</strong> Applications</a></li><li><a href="../hardware/components.html"><strong aria-hidden="true">4.</strong> Components</a></li><li><ol class="section"><li><a href="../hardware/components.html"><strong aria-hidden="true">4.1.</strong> Topside</a></li><li><a href="../hardware/components.html"><strong aria-hidden="true">4.2.</strong> ROV</a></li></ol></li><li><a href="../software/components.html"><strong aria-hidden="true">5.</strong> Components</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.</strong> ArduSub Firmware</a></li><li><ol class="section"><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.1.</strong> Versioning</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.2.</strong> Release History</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.3.</strong> What Version is Installed?</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.4.</strong> Updating</a></li></ol></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li><ol class="section"><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.1.</strong> QGroundControl</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.2.</strong> ArduSub</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.3.</strong> Raspberry Pi</a></li></ol></li><li><a href="../getting-started/initial-setup.html"><strong aria-hidden="true">8.</strong> Initial Setup</a></li><li><a href="../operators-manual/button-functions.html"><strong aria-hidden="true">9.</strong> Joystick Button Functions</a></li><li><a href="../operators-manual/arming-checks.html"><strong aria-hidden="true">10.</strong> Arming Checks</a></li><li><a href="../operators-manual/flight-modes.html"><strong aria-hidden="true">11.</strong> Flight Modes</a></li><li><a href="../operators-manual/failsafes.html"><strong aria-hidden="true">12.</strong> Failsafes</a></li><li><a href="../operators-manual/logging.html"><strong aria-hidden="true">13.</strong> Logging</a></li><li><a href="../operators-manual/parameters.html"><strong aria-hidden="true">14.</strong> Parameters</a></li><li><a href="../operators-manual/full-parameter-list.html"><strong aria-hidden="true">15.</strong> Full Parameter List</a></li><li><a href="../troubleshooting/troubleshooting.html"><strong aria-hidden="true">16.</strong> Troubleshooting</a></li><li><a href="../operators-manual/rc-input-and-output.html"><strong aria-hidden="true">17.</strong> RC Input and Output</a></li><li><a href="../operators-manual/outputs.html"><strong aria-hidden="true">18.</strong> Controlling Outputs</a></li><li><a href="../operators-manual/recording-video.html"><strong aria-hidden="true">19.</strong> Recording Video</a></li><li><a href="../operators-manual/altimeters.html"><strong aria-hidden="true">20.</strong> Altimeters</a></li><li><a href="../operators-manual/companion-web.html"><strong aria-hidden="true">21.</strong> Companion Web Interface</a></li><li><a href="../operators-manual/software-update.html"><strong aria-hidden="true">22.</strong> Updating Software</a></li><li><a href="../developers/opencv.html" class="active"><strong aria-hidden="true">23.</strong> OpenCV</a></li><li><a href="../developers/pymavlink.html"><strong aria-hidden="true">24.</strong> Pymavlink</a></li><li><a href="../developers/sitl.html"><strong aria-hidden="true">25.</strong> SITL</a></li><li><a href="../developers/developers.html"><strong aria-hidden="true">26.</strong> Build ArduSub</a></li><li><a href="../developers/building-docs.html"><strong aria-hidden="true">27.</strong> Build this Documentation</a></li><li><a href="../developers/gps-positioning.html"><strong aria-hidden="true">28.</strong> GPS Positioning</a></li><li><a href="../resources/community.html"><strong aria-hidden="true">29.</strong> Community</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.</strong> Downloads</a></li><li><ol class="section"><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.1.</strong> QGroundControl</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.2.</strong> ArduSub Firmware</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.3.</strong> Raspberry Pi Image</a></li></ol></li><li><a href="../resources/further-reading.html"><strong aria-hidden="true">31.</strong> Further Reading</a></li><li><a href="../miscellaneous/wireless-topside.html"><strong aria-hidden="true">32.</strong> Wireless Topside</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">ArduSub documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#opencv" id="opencv"><h1>OpenCV</h1></a>
+<p>OpenCV (Open Source Computer Vision) is a library to help the development of computer vision software.
+To perform any real-time image processing with the companion camera, we highly suggest OpenCV to do the job.</p>
+<p>Take a look in the OpenCV <a href="https://opencv.org/">website</a> and <a href="https://docs.opencv.org/master/d9/df8/tutorial_root.html">tutorials</a> for further information.</p>
+<a class="header" href="#recommendation" id="recommendation"><h2>Recommendation</h2></a>
+<p>OpenCV support both Python 2 and Python 3, it's recommended to install it via your package manager.</p>
+<a class="header" href="#installation" id="installation"><h2>Installation</h2></a>
+<a class="header" href="#ubuntu-1604" id="ubuntu-1604"><h4>Ubuntu 16.04</h4></a>
+<pre><code class="language-sh"># Update list of available packages
+sudo apt update
+
+# Install opencv and dependencies
+sudo apt install python-numpy python-opencv libopencv-dev
+
+# Install gstreamer and plugins
+sudo apt install python-gst-1.0 gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-libav
+</code></pre>
+<a class="header" href="#companion" id="companion"><h3>Companion</h3></a>
+<pre><code class="language-sh"># Update list of available packages
+sudo apt update
+
+# Install opencv and dependencies
+sudo apt install python-numpy python-opencv libopencv-dev
+
+# Install gstreamer and plugins
+sudo apt install python-gst-1.0 gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-bad gstreamer1.0-libav \
+    gir1.2-gst-plugins-base-1.0 gir1.2-gstreamer-1.0
+</code></pre>
+<a class="header" href="#examples" id="examples"><h1>Examples</h1></a>
+<p>Take a look in the <a href="/software/components.html">diagram of the software components</a> to see how the communication between all the modules work.</p>
+<p>The video raw data goes to gstreamer that send it via udp (:5600) inside the companion board to the topside computer.</p>
+<a class="header" href="#top-side-computer" id="top-side-computer"><h3>Top side computer</h3></a>
+<p>To capture video stream with the python script and QGC at same time, it's necessary to modify <a href="http://192.168.2.2:2770/camera">gstreamer options</a>, changing <code>! udpsink host=192.168.2.1 port=5600</code> to <code>! multiudpsink clients=192.168.2.1:5600,192.168.2.1:4777</code> and add the new <code>port</code> parameter when calling <code>Video</code> (<code>video = Video(port=4777)</code>).</p>
+<a class="header" href="#receive-and-display-stream" id="receive-and-display-stream"><h4>Receive and display stream</h4></a>
+<a class="header" href="#python" id="python"><h5>Python</h5></a>
+<pre><code class="language-py">#!/usr/bin/env python
+&quot;&quot;&quot;
+BlueRov video capture class
+&quot;&quot;&quot;
+
+import cv2
+import gi
+import numpy as np
+
+gi.require_version('Gst', '1.0')
+from gi.repository import Gst
+
+
+class Video():
+    &quot;&quot;&quot;BlueRov video capture class constructor
+
+    Attributes:
+        port (int): Video UDP port
+        video_codec (string): Source h264 parser
+        video_decode (string): Transform YUV (12bits) to BGR (24bits)
+        video_pipe (object): GStreamer top-level pipeline
+        video_sink (object): Gstreamer sink element
+        video_sink_conf (string): Sink configuration
+        video_source (string): Udp source ip and port
+    &quot;&quot;&quot;
+
+    def __init__(self, port=5600):
+        &quot;&quot;&quot;Summary
+
+        Args:
+            port (int, optional): UDP port
+        &quot;&quot;&quot;
+
+        Gst.init(None)
+
+        self.port = port
+        self._frame = None
+
+        # [Software component diagram](https://www.ardusub.com/software/components.html)
+        # UDP video stream (:5600)
+        self.video_source = 'udpsrc port={}'.format(self.port)
+        # [Rasp raw image](http://picamera.readthedocs.io/en/release-0.7/recipes2.html#raw-image-capture-yuv-format)
+        # Cam -&gt; CSI-2 -&gt; H264 Raw (YUV 4-4-4 (12bits) I420)
+        self.video_codec = '! application/x-rtp, payload=96 ! rtph264depay ! h264parse ! avdec_h264'
+        # Python don't have nibble, convert YUV nibbles (4-4-4) to OpenCV standard BGR bytes (8-8-8)
+        self.video_decode = \
+            '! decodebin ! videoconvert ! video/x-raw,format=(string)BGR ! videoconvert'
+        # Create a sink to get data
+        self.video_sink_conf = \
+            '! appsink emit-signals=true sync=false max-buffers=2 drop=true'
+
+        self.video_pipe = None
+        self.video_sink = None
+
+        self.run()
+
+    def start_gst(self, config=None):
+        &quot;&quot;&quot; Start gstreamer pipeline and sink
+        Pipeline description list e.g:
+            [
+                'videotestsrc ! decodebin', \
+                '! videoconvert ! video/x-raw,format=(string)BGR ! videoconvert',
+                '! appsink'
+            ]
+
+        Args:
+            config (list, optional): Gstreamer pileline description list
+        &quot;&quot;&quot;
+
+        if not config:
+            config = \
+                [
+                    'videotestsrc ! decodebin',
+                    '! videoconvert ! video/x-raw,format=(string)BGR ! videoconvert',
+                    '! appsink'
+                ]
+
+        command = ' '.join(config)
+        self.video_pipe = Gst.parse_launch(command)
+        self.video_pipe.set_state(Gst.State.PLAYING)
+        self.video_sink = self.video_pipe.get_by_name('appsink0')
+
+    @staticmethod
+    def gst_to_opencv(sample):
+        &quot;&quot;&quot;Transform byte array into np array
+
+        Args:
+            sample (TYPE): Description
+
+        Returns:
+            TYPE: Description
+        &quot;&quot;&quot;
+        buf = sample.get_buffer()
+        caps = sample.get_caps()
+        array = np.ndarray(
+            (
+                caps.get_structure(0).get_value('height'),
+                caps.get_structure(0).get_value('width'),
+                3
+            ),
+            buffer=buf.extract_dup(0, buf.get_size()), dtype=np.uint8)
+        return array
+
+    def frame(self):
+        &quot;&quot;&quot; Get Frame
+
+        Returns:
+            iterable: bool and image frame, cap.read() output
+        &quot;&quot;&quot;
+        return self._frame
+
+    def frame_available(self):
+        &quot;&quot;&quot;Check if frame is available
+
+        Returns:
+            bool: true if frame is available
+        &quot;&quot;&quot;
+        return type(self._frame) != type(None)
+
+    def run(self):
+        &quot;&quot;&quot; Get frame to update _frame
+        &quot;&quot;&quot;
+
+        self.start_gst(
+            [
+                self.video_source,
+                self.video_codec,
+                self.video_decode,
+                self.video_sink_conf
+            ])
+
+        self.video_sink.connect('new-sample', self.callback)
+
+    def callback(self, sink):
+        sample = sink.emit('pull-sample')
+        new_frame = self.gst_to_opencv(sample)
+        self._frame = new_frame
+
+        return Gst.FlowReturn.OK
+
+
+if __name__ == '__main__':
+    # Create the video object
+    # Add port= if is necessary to use a different one
+    video = Video()
+
+    while True:
+        # Wait for the next frame
+        if not video.frame_available():
+            continue
+
+        frame = video.frame()
+        cv2.imshow('frame', frame)
+        if cv2.waitKey(1) &amp; 0xFF == ord('q'):
+            break
+</code></pre>
+<a class="header" href="#c" id="c"><h5>C++</h5></a>
+<pre><code class="language-cpp">/**
+ * BlueRov video capture example
+ * Based on:
+ * https://stackoverflow.com/questions/10403588/adding-opencv-processing-to-gstreamer-application
+ */
+
+// Include atomic std library
+#include &lt;atomic&gt;
+
+// Include gstreamer library
+#include &lt;gst/gst.h&gt;
+#include &lt;gst/app/app.h&gt;
+
+// Include OpenCV library
+#include &lt;opencv.hpp&gt;
+
+// Share frame between main loop and gstreamer callback
+std::atomic&lt;cv::Mat*&gt; atomicFrame;
+
+/**
+ * @brief Check preroll to get a new frame using callback
+ *  https://gstreamer.freedesktop.org/documentation/design/preroll.html
+ * @return GstFlowReturn
+ */
+GstFlowReturn new_preroll(GstAppSink* /*appsink*/, gpointer /*data*/)
+{
+    return GST_FLOW_OK;
+}
+
+/**
+ * @brief This is a callback that get a new frame when a preroll exist
+ *
+ * @param appsink
+ * @return GstFlowReturn
+ */
+GstFlowReturn new_sample(GstAppSink *appsink, gpointer /*data*/)
+{
+    static int framecount = 0;
+
+    // Get caps and frame
+    GstSample *sample = gst_app_sink_pull_sample(appsink);
+    GstCaps *caps = gst_sample_get_caps(sample);
+    GstBuffer *buffer = gst_sample_get_buffer(sample);
+    GstStructure *structure = gst_caps_get_structure(caps, 0);
+    const int width = g_value_get_int(gst_structure_get_value(structure, &quot;width&quot;));
+    const int height = g_value_get_int(gst_structure_get_value(structure, &quot;height&quot;));
+
+    // Print dot every 30 frames
+    if(!(framecount%30)) {
+        g_print(&quot;.&quot;);
+    }
+
+    // Show caps on first frame
+    if(!framecount) {
+        g_print(&quot;caps: %s\n&quot;, gst_caps_to_string(caps));
+    }
+    framecount++;
+
+    // Get frame data
+    GstMapInfo map;
+    gst_buffer_map(buffer, &amp;map, GST_MAP_READ);
+
+    // Convert gstreamer data to OpenCV Mat
+    cv::Mat* prevFrame;
+    prevFrame = atomicFrame.exchange(new cv::Mat(cv::Size(width, height), CV_8UC3, (char*)map.data, cv::Mat::AUTO_STEP));
+    if(prevFrame) {
+        delete prevFrame;
+    }
+
+    gst_buffer_unmap(buffer, &amp;map);
+    gst_sample_unref(sample);
+
+    return GST_FLOW_OK;
+}
+
+/**
+ * @brief Bus callback
+ *  Print important messages
+ *
+ * @param bus
+ * @param message
+ * @param data
+ * @return gboolean
+ */
+static gboolean my_bus_callback(GstBus *bus, GstMessage *message, gpointer data)
+{
+    // Debug message
+    //g_print(&quot;Got %s message\n&quot;, GST_MESSAGE_TYPE_NAME(message));
+    switch(GST_MESSAGE_TYPE(message)) {
+        case GST_MESSAGE_ERROR: {
+            GError *err;
+            gchar *debug;
+
+            gst_message_parse_error(message, &amp;err, &amp;debug);
+            g_print(&quot;Error: %s\n&quot;, err-&gt;message);
+            g_error_free(err);
+            g_free(debug);
+            break;
+        }
+        case GST_MESSAGE_EOS:
+            /* end-of-stream */
+            break;
+        default:
+            /* unhandled message */
+            break;
+    }
+    /* we want to be notified again the next time there is a message
+     * on the bus, so returning TRUE (FALSE means we want to stop watching
+     * for messages on the bus and our callback should not be called again)
+     */
+    return true;
+}
+
+int main(int argc, char *argv[]) {
+    gst_init(&amp;argc, &amp;argv);
+
+    gchar *descr = g_strdup(
+        &quot;udpsrc port=5600 &quot;
+        &quot;! application/x-rtp, payload=96 ! rtph264depay ! h264parse ! avdec_h264 &quot;
+        &quot;! decodebin ! videoconvert ! video/x-raw,format=(string)BGR ! videoconvert &quot;
+        &quot;! appsink name=sink emit-signals=true sync=false max-buffers=1 drop=true&quot;
+    );
+
+    // Check pipeline
+    GError *error = nullptr;
+    GstElement *pipeline = gst_parse_launch(descr, &amp;error);
+
+    if(error) {
+        g_print(&quot;could not construct pipeline: %s\n&quot;, error-&gt;message);
+        g_error_free(error);
+        exit(-1);
+    }
+
+    // Get sink
+    GstElement *sink = gst_bin_get_by_name(GST_BIN(pipeline), &quot;sink&quot;);
+
+    /**
+     * @brief Get sink signals and check for a preroll
+     *  If preroll exists, we do have a new frame
+     */
+    gst_app_sink_set_emit_signals((GstAppSink*)sink, true);
+    gst_app_sink_set_drop((GstAppSink*)sink, true);
+    gst_app_sink_set_max_buffers((GstAppSink*)sink, 1);
+    GstAppSinkCallbacks callbacks = { nullptr, new_preroll, new_sample };
+    gst_app_sink_set_callbacks(GST_APP_SINK(sink), &amp;callbacks, nullptr, nullptr);
+
+    // Declare bus
+    GstBus *bus;
+    bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline));
+    gst_bus_add_watch(bus, my_bus_callback, nullptr);
+    gst_object_unref(bus);
+
+    gst_element_set_state(GST_ELEMENT(pipeline), GST_STATE_PLAYING);
+
+    // Main loop
+    while(1) {
+        g_main_iteration(false);
+
+        cv::Mat* frame = atomicFrame.load();
+        if(frame) {
+            cv::imshow(&quot;Frame&quot;, atomicFrame.load()[0]);
+            cv::waitKey(30);
+        }
+    }
+
+    gst_element_set_state(GST_ELEMENT(pipeline), GST_STATE_NULL);
+    gst_object_unref(GST_OBJECT(pipeline));
+    return 0;
+}
+</code></pre>
+<a class="header" href="#companion-1" id="companion-1"><h3>Companion</h3></a>
+<p>Before running any program in the companion board, keep in mind that the hardware of a SBC may not run with high performance or with real-time requirements.</p>
+<p>It's possible to get some frames while the stream is in progress, however this can result in some delays in the top side computer.</p>
+<a class="header" href="#get-a-frame-and-save-it" id="get-a-frame-and-save-it"><h4>Get a frame and save it</h4></a>
+<pre><code class="language-py">import numpy as np
+import cv2
+
+cap = cv2.VideoCapture(0)
+
+# Capture frame-by-frame
+ret, frame = cap.read()
+
+# Save the frame
+cv2.imwrite('frame.png', frame)
+
+# When everything done, release the capture
+cap.release()
+</code></pre>
+<a class="header" href="#get-a-frame-from-gstreamer-and-save-it" id="get-a-frame-from-gstreamer-and-save-it"><h4>Get a frame from gstreamer and save it</h4></a>
+<p>Update the gstreamer options to enable multiudpsink like in <strong>Top side computer</strong>, but changing the ip
+of the second output to 192.168.2.2.</p>
+<pre><code class="language-py"># Add or use the Video class here
+
+if __name__ == '__main__':
+    # Create the video object
+    # Add port= if is necessary to use a different one
+    video = Video(port=4777)
+
+    # Wait for the next frame
+    while not video.frame_available():
+        continue
+
+    frame = video.frame()
+    # Save the frame
+    cv2.imwrite('frame.png', frame)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../operators-manual/software-update.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../developers/pymavlink.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../operators-manual/software-update.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../developers/pymavlink.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SITL - ArduSub documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is a description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../index.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="../introduction/features.html"><strong aria-hidden="true">2.</strong> Features</a></li><li><a href="../introduction/applications.html"><strong aria-hidden="true">3.</strong> Applications</a></li><li><a href="../hardware/components.html"><strong aria-hidden="true">4.</strong> Components</a></li><li><ol class="section"><li><a href="../hardware/components.html"><strong aria-hidden="true">4.1.</strong> Topside</a></li><li><a href="../hardware/components.html"><strong aria-hidden="true">4.2.</strong> ROV</a></li></ol></li><li><a href="../software/components.html"><strong aria-hidden="true">5.</strong> Components</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.</strong> ArduSub Firmware</a></li><li><ol class="section"><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.1.</strong> Versioning</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.2.</strong> Release History</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.3.</strong> What Version is Installed?</a></li><li><a href="../software/ardusub-firmware.html"><strong aria-hidden="true">6.4.</strong> Updating</a></li></ol></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.</strong> Installation</a></li><li><ol class="section"><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.1.</strong> QGroundControl</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.2.</strong> ArduSub</a></li><li><a href="../getting-started/installation.html"><strong aria-hidden="true">7.3.</strong> Raspberry Pi</a></li></ol></li><li><a href="../getting-started/initial-setup.html"><strong aria-hidden="true">8.</strong> Initial Setup</a></li><li><a href="../operators-manual/button-functions.html"><strong aria-hidden="true">9.</strong> Joystick Button Functions</a></li><li><a href="../operators-manual/arming-checks.html"><strong aria-hidden="true">10.</strong> Arming Checks</a></li><li><a href="../operators-manual/flight-modes.html"><strong aria-hidden="true">11.</strong> Flight Modes</a></li><li><a href="../operators-manual/failsafes.html"><strong aria-hidden="true">12.</strong> Failsafes</a></li><li><a href="../operators-manual/logging.html"><strong aria-hidden="true">13.</strong> Logging</a></li><li><a href="../operators-manual/parameters.html"><strong aria-hidden="true">14.</strong> Parameters</a></li><li><a href="../operators-manual/full-parameter-list.html"><strong aria-hidden="true">15.</strong> Full Parameter List</a></li><li><a href="../troubleshooting/troubleshooting.html"><strong aria-hidden="true">16.</strong> Troubleshooting</a></li><li><a href="../operators-manual/rc-input-and-output.html"><strong aria-hidden="true">17.</strong> RC Input and Output</a></li><li><a href="../operators-manual/outputs.html"><strong aria-hidden="true">18.</strong> Controlling Outputs</a></li><li><a href="../operators-manual/recording-video.html"><strong aria-hidden="true">19.</strong> Recording Video</a></li><li><a href="../operators-manual/altimeters.html"><strong aria-hidden="true">20.</strong> Altimeters</a></li><li><a href="../operators-manual/companion-web.html"><strong aria-hidden="true">21.</strong> Companion Web Interface</a></li><li><a href="../operators-manual/software-update.html"><strong aria-hidden="true">22.</strong> Updating Software</a></li><li><a href="../developers/opencv.html"><strong aria-hidden="true">23.</strong> OpenCV</a></li><li><a href="../developers/pymavlink.html"><strong aria-hidden="true">24.</strong> Pymavlink</a></li><li><a href="../developers/sitl.html" class="active"><strong aria-hidden="true">25.</strong> SITL</a></li><li><a href="../developers/developers.html"><strong aria-hidden="true">26.</strong> Build ArduSub</a></li><li><a href="../developers/building-docs.html"><strong aria-hidden="true">27.</strong> Build this Documentation</a></li><li><a href="../developers/gps-positioning.html"><strong aria-hidden="true">28.</strong> GPS Positioning</a></li><li><a href="../resources/community.html"><strong aria-hidden="true">29.</strong> Community</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.</strong> Downloads</a></li><li><ol class="section"><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.1.</strong> QGroundControl</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.2.</strong> ArduSub Firmware</a></li><li><a href="../resources/downloads.html"><strong aria-hidden="true">30.3.</strong> Raspberry Pi Image</a></li></ol></li><li><a href="../resources/further-reading.html"><strong aria-hidden="true">31.</strong> Further Reading</a></li><li><a href="../miscellaneous/wireless-topside.html"><strong aria-hidden="true">32.</strong> Wireless Topside</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">ArduSub documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#sitl-software-in-the-loop" id="sitl-software-in-the-loop"><h1>S.I.T.L (Software In The Loop)</h1></a>
+<p>SITL is a simulator that allows you to run ArduSub without any hardware. It is a build of the autopilot code using an ordinary C++ compiler, giving you a native executable that allows you to test the behaviour of the vehicle.</p>
+<a class="header" href="#installation" id="installation"><h2>Installation</h2></a>
+<p>To configure and run SITL for the first time in your computer, take a look in <a href="http://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html"><strong>Running SITL</strong></a> ArduPilot documentation.</p>
+<a class="header" href="#running-ardusub-sitl" id="running-ardusub-sitl"><h2>Running ArduSub SITL</h2></a>
+<p>This part assumes that you have already set up SITL on your machine.
+First is necessary to be inside ArduSub folder.</p>
+<pre><code class="language-sh">cd ardupilot/ArduSub
+</code></pre>
+<p>To execute SITL with <code>sim_vehicle.py</code>.</p>
+<pre><code class="language-sh">sim_vehicle.py -L RATBeach --out=udp:0.0.0.0:14550 --map --console
+</code></pre>
+<p>After that, ArduSub SITL will compile and start to run, you'll be able to connect it with QGroundControl and control it.</p>
+<p><img src="/images/sitl_ardusub_qgc.png" class="img-responsive img-center" style="max-height:400px;"></p>
+<p>For more information about <code>sim_vehicle.py</code> and the options available, check:</p>
+<pre><code class="language-sh">sim_vehicle.py --help
+</code></pre>
+<a class="header" href="#running-ardusub-sitl-with-gazebo" id="running-ardusub-sitl-with-gazebo"><h3>Running ArduSub SITL with Gazebo</h3></a>
+<p>To run ArduSub SITL with Gazebo, it's necessary to:</p>
+<ol>
+<li>
+<p><a href="http://gazebosim.org/tutorials?tut=install_ubuntu">Install Gazebo-7 or Gazebo-8</a></p>
+</li>
+<li>
+<p>Install <a href="https://github.com/bluerobotics/freebuoyancy_gazebo#install">freebuoyancy_gazebo</a> plugin for buoyancy simulation.</p>
+</li>
+<li>
+<p>Install <a href="https://github.com/patrickelectric/ardupilot_gazebo/tree/add_link#usage-">ardupilot_gazebo/add_link</a> plugin for ardupilot-gazebo communication. <em>add_link</em> is a branch that provides actuation over sdf links, after the <code>git clone</code>, it's necessary to run <code>git checkout add_link</code>.</p>
+</li>
+<li>
+<p>Run BlueRov2 Gazebo model</p>
+<ol>
+<li>
+<p>Download bluerov_ros_playground</p>
+<pre><code class="language-bash">git clone https://github.com/patrickelectric/bluerov_ros_playground
+</code></pre>
+</li>
+<li>
+<p>Run Gazebo model</p>
+<pre><code class="language-bash">cd bluerov_ros_playground
+source gazebo.sh
+gazebo worlds/underwater.world -u
+# Start the simulation
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Execute ArduPilot SITL</p>
+<pre><code class="language-bash">sim_vehicle.py -f gazebo-bluerov2 -L RATBeach --out=udp:0.0.0.0:14550 --console
+</code></pre>
+</li>
+</ol>
+<p>The console will start to display the output if the connection was successful.</p>
+<p><img src="/images/gazebo_sitl.gif" class="img-responsive img-center" style="max-height:400px;"></p>
+<a class="header" href="#troubleshooting" id="troubleshooting"><h2>Troubleshooting</h2></a>
+<ol>
+<li>Check if all dependencies are installed via <a href="http://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html#install-some-required-packages">install some required packages</a>.
+<ul>
+<li>If you are running an Unix OS, it's possible also to install missing dependencies with your package manager or <code>pip</code>.</li>
+</ul>
+</li>
+<li>Be sure that mavproxy is installed with <code>whereis mavproxy</code>, <code>pip list | grep mavproxy -i</code> or just <code>mavproxy</code>.
+<ul>
+<li>If mavproxy is not installed, please run the install packages script (described in step 1 of this troubleshooting) or install the packages manually.</li>
+</ul>
+</li>
+<li>Check if ArduPilot tools are in your system PATH. It's possible to check with <code>echo $PATH | grep ardupilot</code>, the result should contains <code>*/ardupilot/Tools/autotest</code> path.
+<ul>
+<li>Check again <a href="http://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html#add-some-directories-to-your-search-path-facultative">add some directories to your search path</a>.</li>
+</ul>
+</li>
+<li>Check if all <code>ardupilot/modules</code> folders are populated.
+<ul>
+<li>It's necessary to use git and update/sync all submodules after the first installation, check <a href="http://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html#cloning-with-the-command-line">cloning with the command line</a>.</li>
+</ul>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../developers/pymavlink.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../developers/developers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../developers/pymavlink.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../developers/developers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
